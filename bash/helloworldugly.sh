@@ -6,3 +6,4 @@ echo -n "helb wold" |
   awk '{print $1 "\x20" $2 "\41"}'
 bc <<< "(($$ * 4 - 24)/2 + 12)/2" |
   sed 's/^/I am process # /'
+#lab1
