@@ -22,16 +22,9 @@ read thirdnum
 
 sum=$((firstnum + secondnum + thirdnum))
 product=$((firstnum * secondnum * thirdnum))
-difference=$((firstnum - secondnum))
-dividend=$((firstnum / secondnum))
-fpdividend=$(awk "BEGIN{printf \"%.2f\", $firstnum/$secondnum}")
-remainder=$((firstnum % secondnum))
 
 # display outputs with appropriate message
 cat <<EOF
 $firstnum plus $secondnum plus $thirdnum is $sum
 $firstnum multiplied by $secondnum multiplied by $thirdnum is $product
-$firstnum minus $secondnum is $difference
-$firstnum divided by $secondnum is $dividend with a remainder $remainder
-  - More precisely, it is $fpdividend
 EOF
