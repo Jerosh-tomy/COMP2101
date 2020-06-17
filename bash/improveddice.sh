@@ -31,4 +31,5 @@ echo "Sum = $sum"
 
 #average
 average=$((($die1+$die2)/2))
+
 echo "Average = $average"
