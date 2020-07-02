@@ -19,15 +19,14 @@
 # use the find command to generate the list of files with their sizes, with an error redirect to /dev/null
 # use cut or awk to display only the output desired
 
-echo "Setuid files:"
-echo "============="
-find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 3
-echo ""
-
-
 echo "Setgid files:"
 echo "============="
 find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 3
+echo ""
+
+echo "Setuid files:"
+echo "============="
+find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 3
 echo ""
 
 # 10 largest regular files sorted by their sizes
