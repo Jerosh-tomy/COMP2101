@@ -81,7 +81,7 @@ else
   echo "verbose mode is  OFF"
 fi
 
-# telling the user if dedug is ON Or OFF and the number its set to
+# telling the user if dedug is ON Or OFF
 
 if [ $test2 -gt 0 ]
 then
