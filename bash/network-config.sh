@@ -75,32 +75,11 @@
 #   External IP     : $myExternalIP
 #   External Name   : $myExternalName
 
-# Task 1
-
-interface_name=$(ip a | awk '/: e/{gsub(/:/,"");print $2}')
-
-hostname=$(hostname)
-lanAddress=$(ip a s $interface_name | awk '/inet /{gsub(/\/.*/,"");print $2}')
-lanHostname=$(getent hosts $lanAddress | awk '{print $2}')
-externalIP=$(curl -s icanhazip.com)
-externalName=$(getent hosts $externalIP | awk '{print $2}')
-
-
-
-# Task 2
-
-routerAddress=$(ip r | awk '/via /{gsub(/\/.*/,"");print $3}')
-routerHostname=$(getent hosts $routerAddress | awk '{print $2}')
-
-
-# displaying the output
-
-cat<<EOF
-Host name         :$hostname
-LAN address       :$lanAddress
-LAN hostname      :$lanHostname
-External IP       :$externalIP
-External name     :$externalName
-Router Address    :$routerAddress
-Router Hostname   :$routerHostname
+cat <<EOF
+Hostname        : $(hostname)
+LAN Address     : $(ip a s $(ip a |awk '/: e/{gsub(/:/,"");print $2}')|awk '/inet /{gsub(/\/.*/,"");print $2}')
+LAN Hostname    : $(getent hosts $(ip a s $(ip a |awk '/: e/{gsub(/:/,"");print $2}')|awk '/inet /{gsub(/\/.*/,"");print $2}')| awk '{print $2}')
+External IP     : $(curl -s icanhazip.com)
+External Name   : $(getent hosts $(curl -s icanhazip.com) | awk '{print $2}')
 EOF
+
