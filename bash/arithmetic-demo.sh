@@ -6,7 +6,7 @@
 #    the sum of the 3 numbers with a label
 #    the product of the 3 numbers with a label
 
-# Ask the user for 3 numbers
+# Ask  user for 3 numbers
 echo "Enter first number"
 read firstnum
 
