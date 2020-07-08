@@ -74,4 +74,4 @@ fi
 
 output="Welcome to the planet $hostname,$title $USER
 it is $time on $day "
-echo $output
+cowsay $output
