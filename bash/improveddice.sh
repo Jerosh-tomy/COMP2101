@@ -21,15 +21,15 @@ range=6
 bias=1
 die1=$(( RANDOM % $range + $bias))
 die2=$(( RANDOM % $range + $bias ))
-
+die3=$(( RANDOM % $range + $bias))
 # display the results
-echo "Rolled $die1, $die2"
+echo "Rolled $die1, $die2, $die3"
 
 #Sum
-sum=$(($die1+$die2))
+sum=$(($die1+$die2 + $die3))
 echo "Sum = $sum"
 
 #average
-average=$((($die1+$die2)/2))
+average=$((($die1+$die2 + $die3)/3))
 
 echo "Average = $average"
